@@ -10,7 +10,7 @@ public class TestController {
 	
 	@GetMapping
 	public String getString() {
-		return "Hello World.";
+		return "Welcome to docker and jenkins integration.";
 	}
 
 }
