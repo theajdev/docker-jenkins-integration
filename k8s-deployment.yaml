@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-jenkins-integration-k8s-deployment
+spec:
+  selector:
+    matchLabels:
+      app: docker-jenkins-integration-k8s
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: docker-jenkins-integration-k8s
+    spec:
+      containers:
+        - name: docker-jenkins-integration-k8s
+          image: ajaykamble10/docker-jenkins-integration-k8s-example:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
